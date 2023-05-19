@@ -1,0 +1,10 @@
+.recipes-content{
+    border: 1px solid black;
+    margin: auto;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.alternate-font-type-class{
+    font-family: 'Shadows Into Light', cursive;
+  }

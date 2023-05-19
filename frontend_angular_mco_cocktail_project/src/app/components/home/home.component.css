@@ -1,0 +1,18 @@
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 94.5vh;
+}
+
+#center-content-message{
+    font-family: 'Satisfy';
+    font-size: 120px;
+    min-height: 80px;
+}
+
+#center-content-slogan{
+ font-family: 'Shadows Into Light';
+ font-size: 35px;
+}

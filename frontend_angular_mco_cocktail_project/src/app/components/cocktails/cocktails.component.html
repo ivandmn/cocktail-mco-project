@@ -1,0 +1,51 @@
+<div class="row w-50 mx-auto">
+    <div *ngIf="!enableElaborationSuccess" class="row mt-4 border border-white rounded text-center bg-dark bg-gradient-dark text-white text-center d-flex justify-content-center" id="cocktail-maker-box">
+        <div class="col-sm-12 m-3 h1 alternate-font-type-class">Elaborate Cocktail</div>
+        <div class="example-container col-md-12">
+            <div class="alternate-font-type-class h1 mb-3">Ingredients</div>
+        
+            <div
+            cdkDropList
+            #IngredientsList="cdkDropList"
+            [cdkDropListData]="allIngredients"
+            [cdkDropListConnectedTo]="[IngredientsToElaborateList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let ingredient of allIngredients" cdkDragBoundary="#cocktail-maker-box" cdkDrag>{{ingredient.name}}<span>{{ingredient.price}}€</span>
+            </div>
+            </div>
+        </div>
+        
+        <div class="example-container col-md-12">
+            <div class="alternate-font-type-class h1 mb-3">Cocktail Formula</div>
+        
+            <div
+            cdkDropList
+            #IngredientsToElaborateList="cdkDropList"
+            [cdkDropListData]="ingredientsToElaborate"
+            [cdkDropListConnectedTo]="[IngredientsList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let ingredientToElaborate of ingredientsToElaborate" cdkDragBoundary="#cocktail-maker-box" cdkDrag>{{ingredientToElaborate.name}} <span>{{ingredientToElaborate.price}}€ </span>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-12">
+            <h3 *ngIf="error_msg" class="text-danger">{{error_msg}}</h3>
+            <button class="w-75 btn btn-light mb-4" (click)='elaborateCocktel()' [disabled]="submitted">Elaborate Cocktel</button>
+        </div>
+    </div>
+
+
+    <div *ngIf="enableElaborationSuccess" class="row mt-4 border border-white rounded text-center bg-dark bg-gradient-dark text-white text-center d-flex justify-content-center" id="cocktail-maker-box">
+        <div class="col-sm-12 m-3 h1 alternate-font-type-class">CONGRATULATIONS!!</div>
+        <div class="col-md-12">
+            <h1>You have successfully made the cocktail <div class="text-danger h2">{{cocktail_elaborated.name}}</div> </h1>
+        </div>
+        <div class="text-success h3 col-md-6" >{{cocktail_elaborated.rawPrice}}€ from raw ingredients</div>
+        <div class="text-warning h3 col-md-6 mb-5">{{cocktail_elaborated.price-cocktail_elaborated.rawPrice}}€ preparation costs</div>
+        <div class="col-md-12">
+            <button class="w-75 btn btn-light mb-4" [disabled]="submitted" (click)="addPriceToCart(cocktail_elaborated.price)">Add {{cocktail_elaborated.price}}€ to cart</button>
+        </div>
+    </div>
+</div>

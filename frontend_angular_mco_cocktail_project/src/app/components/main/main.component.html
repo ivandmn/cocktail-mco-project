@@ -1,0 +1,25 @@
+
+    <div class="topbar">
+        <mat-toolbar color="warn">
+            <span class="material-icons" id="cocktail_icon" role="button" routerLink="/home">
+                local_bar
+            </span>
+            <span class="navbar-name" role="button" routerLink="/home">MCO Cocktails Shop</span>
+            <div class="spacer"></div>
+            <a class="navbar-button" *ngIf="!AuthService.logged_user" mat-button (click)="openLoginDialog()">Login</a>
+            
+            <a class="navbar-button-hidden" *ngIf="AuthService.logged_user" mat-button routerLink="/cocktails">Cocktails</a>
+            <a class="navbar-button-hidden" *ngIf="AuthService.logged_user" mat-button routerLink="/recipes">Recipes</a>
+            <a class="navbar-button-hidden" *ngIf="AuthService.logged_user" mat-button (click)="logout()">Logout</a>
+            <a class="navbar-button" *ngIf="AuthService.logged_user" routerLink="/cart" mat-button (click)="openCartDialog()">
+                <span class="material-icons navbar-button-icon">
+                    shopping_cart
+                </span>
+            </a>
+        </mat-toolbar>
+    </div>
+    <div class='bg-opacity'>
+        <div class="main-content"><router-outlet></router-outlet></div>
+    </div>
+
+

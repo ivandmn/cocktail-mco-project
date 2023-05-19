@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Login</h1>
+<form [formGroup]="loginForm" (ngSubmit)="login()" method="post">
+    <div mat-dialog-content>
+        <mat-form-field color="accent" hideRequiredMarker="true">
+            <mat-label>Username</mat-label>
+            <input formControlName="username" matInput>
+        </mat-form-field>
+        <mat-form-field color="accent" hideRequiredMarker="true">
+            <mat-label>Password</mat-label>
+            <input type="password" formControlName="password" matInput>
+        </mat-form-field>
+        <div *ngIf="error_login_msg">
+            <p class="error-msg">{{error_login_msg}}</p>
+        </div>
+    </div>
+
+    <div mat-dialog-actions align="center">
+    <button mat-button class="dialog-buttons" [mat-dialog-close]="null">Cancel</button>
+    <button mat-button class="dialog-buttons" type="submit" [disabled]="loginForm.invalid || submitted" (click)="login()">Login</button>
+    </div>
+</form>

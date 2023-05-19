@@ -1,0 +1,13 @@
+<div class="row w-50 mx-auto">
+        <div class="row mt-2 border border-white rounded text-center bg-dark bg-gradient-dark text-white">
+            <div class="col-sm-12 h1 m-3"><div class="alternate-font-type-class h1 mb-3">Ingredients</div></div>
+            <div *ngFor="let cocktail of cocktails" class="col-md-6">
+                <div class="m-2">
+                    <div class="alternate-font-type-class h1 mb-3">{{cocktail.name}}</div>
+                    <ul class="list-group list-group-numbered mb-3">
+                        <li class="list-group-item h5 font-italic" *ngFor="let cocktail_ingredient of cocktail.ingredients">{{cocktail_ingredient.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
