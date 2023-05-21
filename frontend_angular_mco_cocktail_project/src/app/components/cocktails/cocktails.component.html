@@ -43,7 +43,7 @@
             <h1>You have successfully made the cocktail <div class="text-danger h2">{{cocktail_elaborated.name}}</div> </h1>
         </div>
         <div class="text-success h3 col-md-6" >{{cocktail_elaborated.rawPrice}}€ from raw ingredients</div>
-        <div class="text-warning h3 col-md-6 mb-5">{{cocktail_elaborated.price-cocktail_elaborated.rawPrice}}€ preparation costs</div>
+        <div class="text-warning h3 col-md-6 mb-5">{{cocktail_elaborated.price-cocktail_elaborated.rawPrice | number : '1.2-2' }}€ preparation costs</div>
         <div class="col-md-12">
             <button class="w-75 btn btn-light mb-4" [disabled]="submitted" (click)="addPriceToCart(cocktail_elaborated.price)">Add {{cocktail_elaborated.price}}€ to cart</button>
         </div>

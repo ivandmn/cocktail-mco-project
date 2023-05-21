@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             [
                 'username' => 'mco2',
                 'password' => 'mco2',
-                'name' => 'Babi the blackbull',
+                'name' => 'Jose Pérez',
                 'address' => 'Calle Libertadores 2',
                 'phone' => '658231512',
                 'email' => 'qeweqwesa@gmail.com',

@@ -23,7 +23,7 @@ class CocktailController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Return cocktail if cocktail is elaborted correctly with the ingredients in order
      */
     public function elaborateCocktail(Request $request)
     {

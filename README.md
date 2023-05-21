@@ -12,12 +12,19 @@ php artisan key:generate
 ```bash 
 php artisan migrate:fresh --seed
 ```
+##### Open laravel in localhost with the next command
 ```bash 
 php artisan serve
 ```
 
 ### Run the following commands to open Angular frontend in "localhost":4200 (fille "frontend_angular_mco_cocktail_project")
-##### Required node.js && Angular
+##### Required node.js && Angular installed
+
+Install angular with the next command
+```bash 
+npm install -g @angular/cli
+```
+Open angular in loclhost with the next command
 ```bash 
 ng serve --open
 ```
@@ -26,11 +33,22 @@ ng serve --open
 ##Database
 Database has the next tables ->
   - [Ingredients](#git) --> Save cocktail ingredients, the ingredients are from MCO API
-  - [Users](#django) --> Save user info
+  - [Users](#django) --> Save users info
   - [Orders](#angular) --> Save orders from users
   - [Cocktails](#laravel) --> Save cocktails
+  - [CocktailsIngredients](#laravel) --> Table for the relationship between cocktails and ingredients
 
-  Relationship with tables Ingredients and Cocktails
+##Application use
+Users created for MCO cocktail application(after migrate and seed in Laravel) ->
+##### User 1
+
+username -> mco
+password -> mco
+
+##### User 2
+
+username -> mco2
+password -> mco2
 
 
 

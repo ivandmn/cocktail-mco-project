@@ -11,6 +11,7 @@
             <a class="navbar-button-hidden" *ngIf="AuthService.logged_user" mat-button routerLink="/cocktails">Cocktails</a>
             <a class="navbar-button-hidden" *ngIf="AuthService.logged_user" mat-button routerLink="/recipes">Recipes</a>
             <a class="navbar-button-hidden" *ngIf="AuthService.logged_user" mat-button (click)="logout()">Logout</a>
+            <a class="navbar-button-hidden text-warning" *ngIf="AuthService.logged_user">Welcome {{AuthService.current_user.name}}!</a>
             <a class="navbar-button" *ngIf="AuthService.logged_user" routerLink="/cart" mat-button (click)="openCartDialog()">
                 <span class="material-icons navbar-button-icon">
                     shopping_cart
